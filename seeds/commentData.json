@@ -1,0 +1,18 @@
+[
+  {
+    "text": "Great job!",
+    "user_id": 3,
+    "blogpost_id": 3
+  },
+  {
+    "text": "Add more!",
+    "user_id": 2,
+    "blogpost_id": 3
+
+  },
+  {
+    "text": "What a good idea!",
+    "user_id": 3,
+    "blogpost_id": 3
+  }
+]

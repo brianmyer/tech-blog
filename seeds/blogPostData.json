@@ -1,0 +1,17 @@
+[
+  {
+    "title": "JavaScript",
+    "text": "This is a blog post with basic information about JavaScript",
+    "user_id": 2
+  },
+  {
+    "title": "SQL",
+    "text": "This is a blog post with basic information about SQL and relational databases",
+    "user_id": 2
+  },
+  {
+    "title": "Vocabulary",
+    "text": "Basic words and definitions that pertain to web development",
+    "user_id": 1
+  }
+]
