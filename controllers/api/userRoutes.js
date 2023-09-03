@@ -80,7 +80,7 @@ router.get('/:id', async (req, res) => {
 
       ],
       where: {
-        user_id: req.params.id,
+        user_id: req.session.user_id,
       },
     });
 
