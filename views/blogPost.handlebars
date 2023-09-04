@@ -7,3 +7,21 @@
     <button class="btn btn-primary">Add a comment</button>
   </p>
 </div>
+
+<div class="text-center">
+  {{#if blogPost.comments.length}}
+  <div>
+    <h3>Comments:</h3>
+
+    {{#each blogPost.comments as |comment|}}
+    <div >
+      <div >
+        <h5>{{comment.text}}</h5>
+          <p>Created by {{comment.user.name}} on {{format_date comment.date_created}}</p>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>
+
