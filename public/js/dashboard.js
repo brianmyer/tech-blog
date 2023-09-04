@@ -1,14 +1,13 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
 
-  const name = document.querySelector('#blogPost-name').value.trim();
-  const needed_funding = document.querySelector('#blogPost-funding').value.trim();
-  const description = document.querySelector('#blogPost-desc').value.trim();
+  const title = document.querySelector('#blogPost-title').value.trim();
+  const text = document.querySelector('#blogPost-text').value;
 
-  if (name && needed_funding && description) {
+  if (title && text) {
     const response = await fetch(`/api/blogPosts`, {
       method: 'POST',
-      body: JSON.stringify({ name, needed_funding, description }),
+      body: JSON.stringify({ title, text }),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -17,7 +16,7 @@ const newFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/dashboard');
     } else {
-      alert('Failed to create blogPost');
+      alert('Failed to create blog post');
     }
   }
 };
