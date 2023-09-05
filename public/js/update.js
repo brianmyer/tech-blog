@@ -15,7 +15,6 @@ const updFormHandler = async (event) => {
           'Content-Type': 'application/json',
         },
       });
-  
       if (response.ok) {
         document.location.replace(`/api/blogPosts/${lastParameter}`);
       } else {
