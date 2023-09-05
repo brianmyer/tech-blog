@@ -2,16 +2,18 @@
   <h2>{{blogPost.title}}</h2>
   <p>{{blogPost.text}}</p>
   <p>Created by {{blogPost.user.name}} on {{format_date blogPost.date_created}}</p>
-  
+
+
   <h4>Create a Comment:</h4>
 
-    <form class="form new-comment-form">
-      <div class="form-group">
-        <label for="comment-text">Add your comment here:</label>
-        <input class="form-input" type="text" id="comment-text" name="comment-text" />
-      </div>
-    </form>
+  <form class="form new-comment-form">
+    <div class="form-group">
+      <label for="comment-text">Add your comment here:</label>
+      <input class="form-input" type="text" id="comment-text" name="comment-text" />
+    </div>
+  </form>
 </div>
+
 
 <div class="text-center">
   {{#if blogPost.comments.length}}
@@ -19,10 +21,10 @@
     <h4>Comments:</h4>
 
     {{#each blogPost.comments as |comment|}}
-    <div >
-      <div >
+    <div>
+      <div>
         <h5>{{comment.text}}</h5>
-          <p>Created by {{comment.user.name}} on {{format_date comment.date_created}}</p>
+        <p>Created by {{comment.user.name}} on {{format_date comment.date_created}}</p>
       </div>
     </div>
     {{/each}}

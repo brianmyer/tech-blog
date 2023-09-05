@@ -93,5 +93,16 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+router.get('/update/:id', withAuth, async (req, res) => {
+  try {
+  
+    res.render('update');
+  } catch (err) {
+    console.log(err)
+    res.status(500).json(err);
+  }
+});
+
+
 
 module.exports = router;

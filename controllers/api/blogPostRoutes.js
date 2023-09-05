@@ -25,11 +25,10 @@ router.get('/:id', withAuth, async (req, res) => {
     });
 
     const blogPost = blogPostData.get({ plain: true });
-
     // res.json(blogPost);
     res.render('blogPost', { 
       blogPost, 
-      logged_in: req.session.logged_in 
+      logged_in: req.session.logged_in, 
     });
   } catch (err) {
     res.status(500).json(err);
@@ -50,8 +49,8 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
+
 router.put('/:id', withAuth, async (req, res) => {
-  // update product data
   try {
     const updatedBlogPost = await BlogPost.update(req.body, {
       where: {

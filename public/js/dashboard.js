@@ -1,3 +1,5 @@
+
+
 const newFormHandler = async (event) => {
   event.preventDefault();
 
@@ -21,8 +23,26 @@ const newFormHandler = async (event) => {
   }
 };
 
+const updButtonHandler = async (event) => {
+  if (event.target.id === 'update') {
+    const id = event.target.getAttribute('data-id');
+    const response = await fetch(`/update/${id}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    console.log(response)
+    if (response.ok) {
+      document.location.replace(`/update/${id}`);
+    } else {
+      console.log('Failed to update blog post')
+    }
+  }
+}
+
 const delButtonHandler = async (event) => {
-  if (event.target.hasAttribute('data-id')) {
+  if (event.target.id === 'delete') {
     const id = event.target.getAttribute('data-id');
 
     const response = await fetch(`/api/blogPosts/${id}`, {
@@ -44,3 +64,7 @@ document
 document
   .querySelector('.blogPost-list')
   .addEventListener('click', delButtonHandler);
+
+  document
+  .querySelector('.blogPost-list')
+  .addEventListener('click', updButtonHandler);
